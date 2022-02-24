@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn1">체크박스요소확인</button>
+
+    <input type="checkbox" name="inter" value="1">JAVA
+    <input type="checkbox" name="inter" value="2">JSP
+    <input type="checkbox" name="inter" value="3">DB
+    <input type="checkbox" name="inter" value="4">JSX
+    <input type="checkbox" name="inter" value="5">JS
+
+    <hr>
+
+    <script>
+        var btn1 = document.getElementById("btn1");
+        btn1.onclick = function () {
+            //name속성이 inter인 것을 선택
+            var inter = document.getElementsByName("inter");
+            for(var i = 0; i < inter.length; i++ ) {
+                console.log(inter[i]);
+                console.log(inter[i].value);    //요소의 value값
+                console.log(inter[i].checked);  //요소의 check여부 true false
+            }
+            console.log(inter);
+        }
+
+    </script>
+
+    <button id="btn2">체크박스요소확인</button>
+    
+    <input type="radio" name="major" class="nice" value="1">프로그램
+    <input type="radio" name="major" class="nice" value="2">디자인
+    <input type="radio" name="major" class="nice" value="3">네트워크
+    <input type="radio" name="major" class="nice" value="4">운영체제
+
+    <script>
+        var btn2 = document.getElementsByClassName("nice");
+
+        btn2.onclick = function() {
+            for(var i= 0; i <nice.length; i++) {
+            console.log(nice[i]);
+            console.log(nice[i].value);
+            console.log(nice[i].checked);
+            }
+        }
+        
+    </script>
+
+    <hr>
+
+
+    <button id="btn3">태그로 선택하기</button>
+    <select id="select1">
+        <option>010</option>
+        <option>02</option>
+        <option>031</option>
+        <option>051</option>
+        <option>052</option>
+    </select>
+
+    <script>
+        var btn3 = document.getElementById("btn3");
+        btn3.onclick =function(){
+            //var option = document.getElementsByTagName("option"); //선택할태그를 문자열로
+            //console.log(option);
+
+            var select1 = document.getElementById("select1");
+            // console.log(select1);
+            var option = select1.getElementsByTagName("option");
+
+            for(var i = 0; i < option.length; i++) {
+                console.log(option[i]);
+                console.log(option[i].value);
+                console.log(option[i].selected);
+            }
+        }
+    </script>
+    
+</body>
+</html>
