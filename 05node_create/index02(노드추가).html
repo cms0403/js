@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+        <button type="button" id="add">버튼</button>
+    </ul>
+
+    <script>
+        var count = 0;
+        var add = document.getElementById("add");
+        add.onclick = function() {
+            var li = document.createElement("li"); //만들 태그를 문자열의 형태로 적음
+            var a = document.createElement("a");
+            var text = documnet.createTextNode(++count + ".문자열생성"); //문자열로 출력
+
+            a.href = "https://www.naver.com"; //a의 속성추가
+
+            a.appendChild(text);//a자식으로 text추가
+            li.appendChild(a);//li자식으로 a추가
+
+            document.querySelector(".list").appendChild(li);
+        }
+    </script>
+    
+</body>
+</html>
