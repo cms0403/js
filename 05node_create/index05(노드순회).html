@@ -100,9 +100,31 @@
             console.log(current);
             console.log(next);
 
+            //마지막 행이라면 종료
+            if(next == null) {
+                alert("마지막 행입니다.");
+                return;
+            }
+
             //insertBefore(삽입노드, 기준노드); //기준노드 앞에 삽입노드를 추가
             var table = document.querySelector(".table");
-            insertBefore(next, current);
+            table.insertBefore(next, current);
+
+        }
+
+        function up(node) {
+            console.dir(node);
+
+            var current = node.parentElement.parentElement;
+            var back = current.previousElementSibling;
+
+            if(back == null) {
+                alert("첫행입니다.");
+                return;
+            }
+
+            var table = document.querySelector(".table");
+            table.insertBefore(current, back);
 
         }
 
